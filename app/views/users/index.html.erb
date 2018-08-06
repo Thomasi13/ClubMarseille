@@ -1,0 +1,35 @@
+<% if logged_in? %>
+
+<table class="table table-striped table-dark">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Email</th>
+    </tr>
+  </thead>
+
+	<% y = 1 %>
+
+	<% @all_users.each do |x| %>
+  
+
+  	<tbody>
+    	<tr>
+      		<th scope="row"><%= y %></th>
+      		<td><%= x.firstname %></td>
+      		<td><%= x.lastname %></td>
+      		<td><%= x.email %></td>
+    	</tr>
+  	</tbody>
+
+	<% y += 1 %>
+<% end %>
+</table>
+
+<% else %>
+
+ <%= render 'layouts/login' %>
+
+<% end %>

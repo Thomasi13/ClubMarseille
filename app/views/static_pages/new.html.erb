@@ -1,0 +1,12 @@
+<% if logged_in? %>
+
+	<h1>Bienvenue <%= @user_first_name %> <%= @user_last_name %>!</h1>
+	<h2>Voici le lien du club <a href='<%= users_path %>'>ici</a></h2>
+
+<% else %>
+
+	<h1>Bienvenue</h1>
+	<h2>Vous n'êtes pas encore connecté</h2>
+	<a href='<%= new_session_path %>'>Connexion</a>
+
+<% end %>
