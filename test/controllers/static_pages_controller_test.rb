@@ -1,19 +1,33 @@
 require 'test_helper'
 
 class StaticPagesControllerTest < ActionDispatch::IntegrationTest
-  test "should get new" do
-    get static_pages_new_url
+  
+  def setup
+    @user = users(:one)
+  end
+
+
+  test "should get home" do
+    get root_path
     assert_response :success
   end
 
-  test "should get create" do
-    get static_pages_create_url
+  test "should get new session" do
+    get new_session_path
     assert_response :success
   end
 
-  test "should get show" do
-    get static_pages_show_url
+  test "should get users index" do
+    get users_path
     assert_response :success
   end
+
+
+
+
+
+
+
 
 end
+
